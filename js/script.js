@@ -134,27 +134,10 @@ function waUrl(message) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
 }
 
-function injectWhatsappIcons() {
-  const icon = `
-    <span class="whatsapp-symbol" aria-hidden="true">
-      <svg viewBox="0 0 32 32" role="presentation">
-        <circle cx="16" cy="16" r="15"></circle>
-        <path d="M11.1 9.2c.5-.5 1.3-.7 1.9-.3l2 1.3c.6.4.8 1.2.4 1.8l-.8 1.2c1 1.9 2.5 3.4 4.4 4.4l1.2-.8c.6-.4 1.4-.2 1.8.4l1.3 2c.4.6.3 1.4-.3 1.9l-1.1.9c-.9.7-2.1.9-3.2.5-5.1-1.9-9-5.8-10.9-10.9-.4-1.1-.2-2.3.5-3.2l.9-1.1Z"></path>
-      </svg>
-    </span>`;
-  document.querySelectorAll('.whatsapp-link').forEach(link => {
-    if (!link.querySelector('.whatsapp-symbol')) {
-      link.insertAdjacentHTML('afterbegin', icon);
-    }
-  });
-}
-
 document.querySelectorAll('.whatsapp-link').forEach(link => {
   const message = link.dataset.message;
   if (message) link.href = waUrl(message);
 });
-
-injectWhatsappIcons();
 
 function normalizeGalleryItem(item) {
   return typeof item === 'string' ? { type: 'image', src: item } : item;
