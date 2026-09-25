@@ -557,19 +557,11 @@ body.motion-ready .is-visible{opacity:1!important;transform:none!important}
 .intro-divider span:last-child{background:linear-gradient(90deg,rgba(229,194,124,.85),transparent)}
 .intro-divider i{width:4px;height:4px;border-radius:50%;background:#e6bf7b;box-shadow:0 0 10px rgba(230,191,123,.8)}
 .intro-tagline{margin:0;color:rgba(241,219,178,.72);font-size:7px;letter-spacing:.42em;text-transform:uppercase;text-indent:.42em;animation:introRise .9s 1.6s both}
-.intro-enter{position:absolute;z-index:7;bottom:88px;left:50%;transform:translateX(-50%);border:0;background:none;color:#f1d39b;display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 22px;cursor:pointer;text-transform:uppercase;letter-spacing:.34em;font-size:8px;transition:transform .35s ease,color .25s ease;animation:introRise 1s 1.9s both}
-.intro-enter:before{content:"";position:absolute;inset:0;border:1px solid rgba(225,188,111,.22);border-radius:999px;box-shadow:0 0 0 0 rgba(224,184,105,0);transition:.35s ease;opacity:.6}
-.intro-enter:hover{transform:translateX(-50%) translateY(-5px);color:#fff5df}
-.intro-enter:hover:before{inset:-5px;opacity:1;box-shadow:0 14px 35px rgba(207,157,65,.15)}
-.intro-enter-line{position:relative;width:56px;height:1px;background:linear-gradient(90deg,transparent,#e0b76d,transparent);overflow:hidden}
-.intro-enter-line:after{content:"";position:absolute;inset:0;background:#fff1c9;transform:translateX(-100%);animation:introScan 2.2s 2.3s infinite}
-.intro-enter-dot{width:7px;height:7px;border-right:1px solid #e7c47f;border-bottom:1px solid #e7c47f;transform:rotate(45deg);animation:introArrow 1.6s ease-in-out infinite}
-.intro-status{position:absolute;z-index:6;bottom:30px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.23);font-size:6px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;animation:introRise .9s 2.1s both}
-.intro-progress{width:95px;height:1px;background:rgba(255,255,255,.1);overflow:hidden}
+.intro-status{position:absolute;z-index:6;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:13px;color:rgba(255,255,255,.34);font-size:7px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;text-align:center;animation:introRise .9s 2.1s both}
+.intro-progress{width:105px;height:1px;background:rgba(255,255,255,.1);overflow:hidden}
 .intro-progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#8a5f27,#f1ce88);transform:translateX(-100%);animation:introProgress 7.2s linear both}
 .intro.exit .intro-orbit{animation-play-state:paused}
 .intro.exit .intro-logo-wrap{animation:introLogoExit .75s cubic-bezier(.2,.7,.2,1) both}
-.intro.exit .intro-enter{opacity:0;transform:translateX(-50%) translateY(15px);transition:.35s ease}
 @keyframes introParticleFloat{0%{opacity:0;transform:translate3d(0,18px,0) scale(.6)}15%{opacity:.75}50%{opacity:.25;transform:translate3d(var(--drift),-20px,0) scale(1)}82%{opacity:.58}100%{opacity:0;transform:translate3d(calc(var(--drift)*-1),-80px,0) scale(.45)}}
 @keyframes introOrbitA{to{transform:translate(-50%,-50%) rotate(345deg)}}
 @keyframes introOrbitB{to{transform:translate(-50%,-50%) rotate(-338deg)}}
@@ -581,10 +573,10 @@ body.motion-ready .is-visible{opacity:1!important;transform:none!important}
 @keyframes introRingPulse{0%,100%{transform:translate(-50%,-50%) scale(.98);opacity:.35}50%{transform:translate(-50%,-50%) scale(1.05);opacity:.78}}
 @keyframes introCorePulse{0%,100%{transform:translate(-50%,-50%) scale(.85);opacity:.45}50%{transform:translate(-50%,-50%) scale(1.25);opacity:.85}}
 @keyframes introRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@keyframes introScan{60%,100%{transform:translateX(100%)}}
-@keyframes introArrow{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.55}50%{transform:rotate(45deg) translate(3px,3px);opacity:1}}
 @keyframes introProgress{to{transform:translateX(0)}}
 @media(max-width:700px){
+
+  .intro-status{bottom:34px;gap:11px;font-size:6px;letter-spacing:.24em}.intro-progress{width:92px}
   .intro-topline{top:22px;left:6%;right:6%;font-size:5px;letter-spacing:.25em}.intro-topline span:last-child{display:none}
   .intro-orbit-a{width:150vw;height:62vw}.intro-orbit-b{width:175vw;height:82vw}.intro-orbit-c{width:118vw;height:44vw}.intro-orbit-d{width:138vw;height:56vw}
   .intro-center{width:94vw}.intro-logo-stage{width:min(470px,92vw);aspect-ratio:1.75/1}.intro-logo-ring-1{width:74%;height:74%}.intro-logo-ring-2{width:88%;height:88%}

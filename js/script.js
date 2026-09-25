@@ -282,8 +282,6 @@ function initIntroExperience() {
     particleField.appendChild(fragment);
   }
 
-  const enterButton = document.getElementById('introEnter');
-  if (enterButton) enterButton.addEventListener('click', () => finishIntro('manual'));
 
   intro.addEventListener('pointermove', (event) => {
     const rect = intro.getBoundingClientRect();
