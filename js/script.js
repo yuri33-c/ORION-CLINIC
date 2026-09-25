@@ -18,6 +18,87 @@ const courseOpen = document.querySelector('.course-open');
 
 const WHATSAPP = '5531984200339';
 
+const expertiseModal = document.getElementById('expertiseModal');
+const expertiseClose = document.getElementById('expertiseClose');
+const expertiseCategory = document.getElementById('expertiseCategory');
+const expertiseIndex = document.getElementById('expertiseIndex');
+const expertiseTitle = document.getElementById('expertiseTitle');
+const expertiseLead = document.getElementById('expertiseLead');
+const expertiseContent = document.getElementById('expertiseContent');
+const expertiseSource = document.getElementById('expertiseSource');
+const expertiseWhatsapp = document.getElementById('expertiseWhatsapp');
+
+const expertiseData = {
+  hof: {
+    index: '01',
+    category: 'HOF · HARMONIZAÇÃO OROFACIAL',
+    title: 'Harmonização Orofacial',
+    lead: 'HOF é a sigla para Harmonização Orofacial: uma abordagem que considera a face como um conjunto, relacionando proporções, contornos, tecidos, expressão e, quando aplicável, aspectos funcionais. No trabalho público do Dr. Jeean, a área aparece associada à estética avançada, atualização científica e educação profissional.',
+    cards: [
+      ['O que significa HOF', 'Equilíbrio facial', 'A proposta é olhar o rosto de forma integrada, evitando tratar uma característica isoladamente quando a avaliação pede uma visão mais ampla.'],
+      ['Planejamento', 'Análise individual', 'A indicação de qualquer procedimento depende de avaliação profissional, histórico, anatomia, objetivos e limites de cada caso.'],
+      ['Temas clínicos', 'Estrutura e regeneração', 'Entre os conteúdos públicos associados ao Dr. Jeean estão sustentação facial, preenchedores, bioestimuladores, fios faciais e estratégias de regeneração tecidual.'],
+      ['Atuação pública', 'Ciência e educação', 'Programações de congressos registram o Dr. Jeean em temas como Evolution Derme, Skin Regeneration Concept e bases anatômicas de sustentação com preenchedores e bioestimuladores.'],
+      ['Face', 'Contorno e proporção', 'A HOF pode envolver diferentes regiões e ferramentas, sempre respeitando indicação, habilitação profissional, segurança e planejamento clínico.'],
+      ['Importante', 'Avaliação antes de tratar', 'O conteúdo do site é informativo. A equipe deve confirmar a indicação, técnica e possibilidade de realização para cada pessoa durante o atendimento.']
+    ],
+    source: 'Referências públicas: Sociedade Brasileira de Toxina Botulínica e Implantes Faciais; Conselho Regional de Odontologia; programas de congressos com participação do Dr. Jeean Bernardes.',
+    whatsapp: 'Olá! Gostaria de entender melhor a atuação do Dr. Jeean Bernardes em HOF e saber como funciona a avaliação.'
+  },
+  trend: {
+    index: '02',
+    category: 'HOF TREND XPERIENCE',
+    title: 'HOF TREND XPERIENCE',
+    lead: 'Um congresso dedicado à ciência, inovação e evolução da harmonização facial e corporal. A edição de 2026 foi apresentada como uma experiência que conecta conteúdo avançado, prática clínica, tecnologia, networking e atualização profissional.',
+    cards: [
+      ['Conceito', 'Ciência + prática', 'O evento reúne conteúdo científico, tendências e aplicação clínica em uma experiência voltada a profissionais da estética.'],
+      ['Prática', 'Hands on', 'A programação divulgada incluiu práticas ao vivo, permitindo uma experiência mais próxima da rotina clínica.'],
+      ['Anatomia', 'Cadáver lab', 'A divulgação do evento informou transmissão ao vivo de cadáver lab, com planos anatômicos e pontos de risco relacionados a procedimentos estéticos.'],
+      ['Mercado', 'Marcas e tecnologia', 'O congresso também contou com espaço para stands de empresas, produtos, tecnologias e soluções do setor.'],
+      ['Conexões', 'Networking', 'Além das palestras, a proposta inclui contato entre profissionais, professores, marcas e participantes.'],
+      ['Jeean Bernardes', 'Direção científica', 'Fonte pública da Biodermis identifica Jeean Bernardes como diretor científico do Congresso HOF TREND XPERIENCE.']
+    ],
+    source: 'Referências públicas: Sympla — Congresso HOF TREND XPERIENCE; Biodermis — Estética In. A edição de 2026 ocorreu em Parauapebas e o evento foi produzido pelo Instituto Dr Jeean Bernardes.',
+    whatsapp: 'Olá! Gostaria de receber mais informações sobre o HOF TREND XPERIENCE e sobre os projetos de educação do Dr. Jeean Bernardes.'
+  }
+};
+
+function openExpertise(type) {
+  const data = expertiseData[type];
+  if (!data || !expertiseModal) return;
+  expertiseIndex.textContent = data.index;
+  expertiseCategory.textContent = data.category;
+  expertiseTitle.textContent = data.title;
+  expertiseLead.textContent = data.lead;
+  expertiseContent.innerHTML = data.cards.map(card => `
+    <article class="expertise-content-card">
+      <small>${card[0]}</small>
+      <h3>${card[1]}</h3>
+      <p>${card[2]}</p>
+    </article>
+  `).join('');
+  expertiseSource.innerHTML = data.source;
+  expertiseWhatsapp.href = waUrl(data.whatsapp);
+  expertiseModal.classList.add('open');
+  expertiseModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('lock');
+}
+
+function closeExpertise() {
+  if (!expertiseModal) return;
+  expertiseModal.classList.remove('open');
+  expertiseModal.setAttribute('aria-hidden', 'true');
+  if (!modal?.classList.contains('open') && !courseModal?.classList.contains('open')) document.body.classList.remove('lock');
+}
+
+document.querySelectorAll('.expertise-card').forEach(card => {
+  card.addEventListener('click', () => openExpertise(card.dataset.expertise));
+});
+
+if (expertiseClose) expertiseClose.addEventListener('click', closeExpertise);
+if (expertiseModal) expertiseModal.querySelector('.expertise-backdrop')?.addEventListener('click', closeExpertise);
+
+
 const galleries = {
   'rinomodelacao': [
     'assets/procedimentos/rinomodelacao/01.png',
@@ -53,10 +134,27 @@ function waUrl(message) {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
 }
 
+function injectWhatsappIcons() {
+  const icon = `
+    <span class="whatsapp-symbol" aria-hidden="true">
+      <svg viewBox="0 0 32 32" role="presentation">
+        <circle cx="16" cy="16" r="15"></circle>
+        <path d="M11.1 9.2c.5-.5 1.3-.7 1.9-.3l2 1.3c.6.4.8 1.2.4 1.8l-.8 1.2c1 1.9 2.5 3.4 4.4 4.4l1.2-.8c.6-.4 1.4-.2 1.8.4l1.3 2c.4.6.3 1.4-.3 1.9l-1.1.9c-.9.7-2.1.9-3.2.5-5.1-1.9-9-5.8-10.9-10.9-.4-1.1-.2-2.3.5-3.2l.9-1.1Z"></path>
+      </svg>
+    </span>`;
+  document.querySelectorAll('.whatsapp-link').forEach(link => {
+    if (!link.querySelector('.whatsapp-symbol')) {
+      link.insertAdjacentHTML('afterbegin', icon);
+    }
+  });
+}
+
 document.querySelectorAll('.whatsapp-link').forEach(link => {
   const message = link.dataset.message;
   if (message) link.href = waUrl(message);
 });
+
+injectWhatsappIcons();
 
 function normalizeGalleryItem(item) {
   return typeof item === 'string' ? { type: 'image', src: item } : item;
@@ -108,7 +206,7 @@ function openProcedure(card) {
         : `Ver imagem ${index + 1} de ${title}`);
 
       if (media.type === 'video') {
-        button.innerHTML = '<span class="thumb-play">▶</span><small>VÍDEO</small>';
+        button.innerHTML = '<small>VÍDEO</small>';
       } else {
         const img = document.createElement('img');
         img.src = media.src;
@@ -168,6 +266,18 @@ function finishIntro() {
 document.body.classList.add('lock');
 setTimeout(finishIntro, 4800);
 
+document.body.classList.add('motion-ready');
+const revealTargets = document.querySelectorAll('.section-head, .procedure-card, .specialist-heading, .specialist-info h2, .specialist-copy, .specialist-feature-grid, .credentials-modern, .course-feature, .education-strip, .gallery figure, .location-copy, .map-card');
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+revealTargets.forEach(target => revealObserver.observe(target));
+
 window.addEventListener('load', () => {
   // Mantém o tempo de leitura da marca, mas garante que o conteúdo apareça.
   setTimeout(finishIntro, 300);
@@ -198,6 +308,7 @@ if (courseModal) courseModal.querySelector('.course-backdrop')?.addEventListener
 
 document.addEventListener('keydown', event => {
   if (event.key !== 'Escape') return;
+  if (expertiseModal?.classList.contains('open')) closeExpertise();
   if (modal.classList.contains('open')) closeProcedure();
   if (courseModal.classList.contains('open')) closeCourse();
 });
