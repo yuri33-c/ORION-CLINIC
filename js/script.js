@@ -238,16 +238,79 @@ function closeCourse() {
   if (!modal.classList.contains('open')) document.body.classList.remove('lock');
 }
 
-function finishIntro() {
-  if (!intro) return;
-  intro.classList.add('hide');
-  if (site) site.classList.add('ready');
-  document.body.classList.remove('lock');
+let introClosing = false;
+let introPointerTarget = { x: 0, y: 0 };
+let introPointer = { x: 0, y: 0 };
+let introHideTimer = null;
+
+function finishIntro(reason = 'auto') {
+  if (!intro || introClosing) return;
+  introClosing = true;
+  if (introHideTimer) clearTimeout(introHideTimer);
+
+  intro.dataset.exitReason = reason;
+  intro.classList.add('exit');
+
+  window.setTimeout(() => {
+    intro.classList.add('hide');
+    if (site) site.classList.add('ready');
+    document.body.classList.remove('lock');
+  }, 950);
 }
 
-// A intro é apenas uma abertura visual: o site nunca depende dela para funcionar.
-document.body.classList.add('lock');
-setTimeout(finishIntro, 4800);
+function initIntroExperience() {
+  if (!intro) return;
+
+  document.body.classList.add('lock');
+
+  const particleField = document.getElementById('introParticles');
+  if (particleField) {
+    const fragment = document.createDocumentFragment();
+    const particleCount = window.innerWidth < 600 ? 26 : 52;
+
+    for (let i = 0; i < particleCount; i += 1) {
+      const particle = document.createElement('span');
+      particle.className = 'intro-particle';
+      particle.style.setProperty('--x', `${Math.random() * 100}%`);
+      particle.style.setProperty('--y', `${Math.random() * 100}%`);
+      particle.style.setProperty('--size', `${Math.random() * 3 + 1}px`);
+      particle.style.setProperty('--delay', `${Math.random() * -8}s`);
+      particle.style.setProperty('--duration', `${5 + Math.random() * 7}s`);
+      particle.style.setProperty('--drift', `${(Math.random() - 0.5) * 80}px`);
+      fragment.appendChild(particle);
+    }
+    particleField.appendChild(fragment);
+  }
+
+  const enterButton = document.getElementById('introEnter');
+  if (enterButton) enterButton.addEventListener('click', () => finishIntro('manual'));
+
+  intro.addEventListener('pointermove', (event) => {
+    const rect = intro.getBoundingClientRect();
+    introPointerTarget.x = (event.clientX - rect.left) / rect.width - 0.5;
+    introPointerTarget.y = (event.clientY - rect.top) / rect.height - 0.5;
+    intro.style.setProperty('--mx', `${introPointerTarget.x * 100}%`);
+    intro.style.setProperty('--my', `${introPointerTarget.y * 100}%`);
+  }, { passive: true });
+
+  intro.addEventListener('pointerleave', () => {
+    introPointerTarget.x = 0;
+    introPointerTarget.y = 0;
+  }, { passive: true });
+
+  const animatePointer = () => {
+    introPointer.x += (introPointerTarget.x - introPointer.x) * 0.08;
+    introPointer.y += (introPointerTarget.y - introPointer.y) * 0.08;
+    intro.style.setProperty('--px', introPointer.x.toFixed(4));
+    intro.style.setProperty('--py', introPointer.y.toFixed(4));
+    requestAnimationFrame(animatePointer);
+  };
+  animatePointer();
+
+  introHideTimer = window.setTimeout(() => finishIntro('auto'), 7200);
+}
+
+initIntroExperience();
 
 document.body.classList.add('motion-ready');
 const revealTargets = document.querySelectorAll('.section-head, .procedure-card, .specialist-heading, .specialist-info h2, .specialist-copy, .specialist-feature-grid, .credentials-modern, .course-feature, .education-strip, .gallery figure, .location-copy, .map-card');
@@ -262,8 +325,7 @@ const revealObserver = new IntersectionObserver(entries => {
 revealTargets.forEach(target => revealObserver.observe(target));
 
 window.addEventListener('load', () => {
-  // Mantém o tempo de leitura da marca, mas garante que o conteúdo apareça.
-  setTimeout(finishIntro, 300);
+  if (intro && !introClosing) intro.classList.add('loaded');
 });
 
 window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));

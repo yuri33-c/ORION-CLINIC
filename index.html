@@ -11,18 +11,49 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Abertura com a logo real em PNG transparente -->
-  <div class="intro" id="intro" aria-label="ÓRION CLINIC">
+  <!-- Abertura cinematográfica interativa -->
+  <div class="intro" id="intro" aria-label="Entrada ÓRION CLINIC">
+    <div class="intro-backdrop"></div>
     <div class="intro-noise"></div>
-    <div class="intro-orbit intro-orbit-a"></div>
-    <div class="intro-orbit intro-orbit-b"></div>
-    <div class="intro-glow"></div>
-    <div class="intro-center">
-      <div class="intro-line"></div>
-      <img class="intro-logo" src="assets/logo/orion-logo-transparent.png" alt="ÓRION CLINIC">
-      <p>CIÊNCIA <i></i> ESTÉTICA <i></i> EXCELÊNCIA</p>
+    <div class="intro-stars" id="introParticles" aria-hidden="true"></div>
+    <div class="intro-cursor-glow" id="introCursorGlow" aria-hidden="true"></div>
+    <div class="intro-orbit intro-orbit-a"><span></span></div>
+    <div class="intro-orbit intro-orbit-b"><span></span></div>
+    <div class="intro-orbit intro-orbit-c"><span></span></div>
+    <div class="intro-orbit intro-orbit-d"><span></span></div>
+    <div class="intro-ambient ambient-a"></div>
+    <div class="intro-ambient ambient-b"></div>
+
+    <div class="intro-topline">
+      <span>ÓRION CLINIC</span>
+      <span>CIÊNCIA · ESTÉTICA · EXCELÊNCIA</span>
     </div>
-    <div class="intro-progress"><span></span></div>
+
+    <div class="intro-center">
+      <div class="intro-radiance"></div>
+      <div class="intro-logo-stage" id="introLogoStage">
+        <div class="intro-logo-ring intro-logo-ring-1"></div>
+        <div class="intro-logo-ring intro-logo-ring-2"></div>
+        <div class="intro-logo-pulse"></div>
+        <div class="intro-logo-wrap">
+          <img class="intro-logo intro-logo-white" src="assets/logo/orion-logo-transparent.png" alt="ÓRION CLINIC">
+          <img class="intro-logo intro-logo-gold" src="assets/logo/orion-logo-transparent.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+      <div class="intro-divider"><span></span><i></i><span></span></div>
+      <p class="intro-tagline">UMA NOVA EXPERIÊNCIA EM ESTÉTICA AVANÇADA</p>
+    </div>
+
+    <button class="intro-enter" id="introEnter" type="button" aria-label="Entrar no site">
+      <span class="intro-enter-line"></span>
+      <span class="intro-enter-dot"></span>
+    </button>
+
+    <div class="intro-status">
+      <span>PREPARANDO EXPERIÊNCIA</span>
+      <div class="intro-progress" aria-hidden="true"><span></span></div>
+      <span>AGUARDE</span>
+    </div>
   </div>
 
   <div class="site" id="site">
