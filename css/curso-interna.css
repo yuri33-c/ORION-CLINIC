@@ -1,3 +1,8 @@
+/* ==========================================================================
+   ÓRION EDUCAÇÃO — ESTILOS DAS PÁGINAS INDIVIDUAIS
+   Todas as regras abaixo pertencem às páginas Mentorias, Residência HOF
+   e Workshops.
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 :root{
@@ -57,10 +62,10 @@ body.course-detail-page::selection{background:rgba(60,120,255,.32);color:#fff}
 .detail-hero-copy h1 em{font-style:italic;color:var(--gold-soft)}
 .detail-hero-lead{max-width:710px;color:#acb4bf;font:400 13px/1.9 Manrope,sans-serif;margin:0 0 28px}
 .detail-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
-.detail-button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;border-radius:999px;font:700 9px/1 Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
-.detail-button.primary{color:#090b0f;background:linear-gradient(135deg,#f0cf91,#d9aa55);box-shadow:0 18px 42px rgba(224,186,116,.16)}
+.detail-button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;border-radius:999px;font:800 10px/1 Manrope,sans-serif;letter-spacing:.12em;white-space:nowrap;text-transform:uppercase;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.detail-button.primary{min-width:186px;color:#0a0b0d!important;background:linear-gradient(135deg,#f4d69d,#d3a64f);border:1px solid rgba(255,233,186,.7);box-shadow:0 18px 42px rgba(224,186,116,.22);text-shadow:none;position:relative;overflow:hidden}.detail-button.primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.42) 50%,transparent 75%);transform:translateX(-120%);transition:transform .7s ease}.detail-button.primary:hover::after{transform:translateX(120%)}
 .detail-button.primary:hover{transform:translateY(-2px);box-shadow:0 22px 50px rgba(224,186,116,.23)}
-.detail-button.ghost{color:#eef1f4;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.03)}
+.detail-button.ghost{color:#eef1f4!important;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.045);min-width:186px}
 .detail-button.ghost:hover{transform:translateY(-2px);border-color:rgba(115,162,255,.45);background:rgba(60,120,255,.07)}
 .course-hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:680px}
 .course-meta-box{padding:15px 17px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
@@ -141,9 +146,9 @@ body.course-detail-page::selection{background:rgba(60,120,255,.32);color:#fff}
 .detail-faq-list{display:grid;gap:10px}
 .detail-faq-item{position:relative;width:100%;text-align:left;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));padding:19px 48px 18px 18px;color:#eef0f2;cursor:pointer;font:600 10px/1.5 Manrope,sans-serif;transition:.25s ease}
 .detail-faq-item:hover{transform:translateY(-2px);border-color:rgba(224,186,116,.25)}
-.detail-faq-item::after{content:"+";position:absolute;right:18px;top:14px;color:var(--gold);font:300 25px/1 Manrope,sans-serif}
+.detail-faq-item::after{content:"";position:absolute;right:18px;top:20px;width:12px;height:1px;background:var(--gold)}.detail-faq-item::before{content:"";position:absolute;right:23px;top:15px;width:1px;height:12px;background:var(--gold);transition:opacity .2s ease}
 .detail-faq-item p{max-height:0;overflow:hidden;opacity:0;margin:0;color:#9ea7b1;font:400 10px/1.75 Manrope,sans-serif;transition:max-height .35s ease,opacity .35s ease,margin .35s ease}
-.detail-faq-item.open::after{content:"−"}
+.detail-faq-item.open::before{opacity:0}
 .detail-faq-item.open p{max-height:200px;opacity:1;margin-top:11px}
 
 .detail-final{position:relative;text-align:center;padding:140px 7vw;background:radial-gradient(circle at 50% 18%,rgba(60,120,255,.14),transparent 24%),radial-gradient(circle at 50% 60%,rgba(224,186,116,.08),transparent 31%),#05070b;overflow:hidden}
@@ -181,3 +186,60 @@ body.course-detail-page::selection{background:rgba(60,120,255,.32);color:#fff}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.detail-marquee-track{animation:none}.detail-reveal{transition:none}.detail-button,.detail-feature,.detail-band-image img,.detail-faq-item{transition:none}}
 .detail-hero-media img{transform:scale(1.025) translate3d(var(--mx,0),var(--my,0),0)}
 .detail-hero-media:hover img{transform:scale(1.05) translate3d(var(--mx,0),var(--my,0),0)}
+
+/* WhatsApp CTAs */
+.detail-button.whatsapp-cta{gap:10px}
+.detail-button .whatsapp-svg{width:18px;height:18px;flex:0 0 18px;display:block;color:#18a957}
+.detail-button.primary .whatsapp-svg{color:#0b0d10}
+.detail-button.whatsapp-cta:hover .whatsapp-svg{transform:scale(1.08)}
+@media(max-width:720px){.detail-button .whatsapp-svg{width:17px;height:17px;flex-basis:17px}}
+
+
+/* WhatsApp buttons — versão reforçada */
+.detail-button.whatsapp-cta, .course-detail-wa {
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:11px !important;
+  color:#f7f4ee !important;
+}
+.detail-button.whatsapp-cta {
+  min-width:220px !important;
+  background:linear-gradient(135deg,#0f1720,#162330) !important;
+  border:1px solid rgba(37,211,102,.55) !important;
+  box-shadow:0 18px 42px rgba(6,12,18,.24), 0 0 0 1px rgba(37,211,102,.08) inset !important;
+}
+.course-detail-wa {
+  color:#f7f4ee !important;
+  border-color:rgba(37,211,102,.55) !important;
+}
+.whatsapp-image {
+  width:19px !important;
+  height:19px !important;
+  min-width:19px !important;
+  display:block !important;
+  flex:0 0 19px !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+.course-detail-wa .whatsapp-image {
+  width:17px !important; height:17px !important; min-width:17px !important; flex-basis:17px !important;
+}
+@media(max-width:620px){
+  .detail-button.whatsapp-cta{min-width:0 !important;}
+}
+
+/* CTA WhatsApp: versão final, explícita e visível */
+.detail-button.whatsapp-cta{
+  color:#ffffff !important;
+  background:linear-gradient(135deg,#0e231a,#0b1712) !important;
+  border:1px solid rgba(37,211,102,.6) !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.22), inset 0 0 0 1px rgba(37,211,102,.06) !important;
+}
+.detail-button.whatsapp-cta svg{
+  width:20px !important;height:20px !important;min-width:20px !important;
+  color:#25d366 !important;display:block !important;visibility:visible !important;opacity:1 !important;
+  flex:0 0 20px !important;
+}
+.detail-button.whatsapp-cta:hover{border-color:#25d366 !important;box-shadow:0 20px 44px rgba(37,211,102,.15) !important;transform:translateY(-2px)}
+.course-detail-wa svg{color:#25d366 !important;width:18px;height:18px;display:block;flex:0 0 18px}

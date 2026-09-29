@@ -1,3 +1,8 @@
+/**
+ * ========================================================================
+ * ÓRION CLINIC — JAVASCRIPT GLOBAL DO SITE
+ * ========================================================================
+ */
 const intro = document.getElementById('intro');
 const site = document.getElementById('site');
 const header = document.getElementById('header');

@@ -1,3 +1,8 @@
+/**
+ * ========================================================================
+ * ÓRION EDUCAÇÃO — JAVASCRIPT DAS PÁGINAS INDIVIDUAIS DOS PROGRAMAS
+ * ========================================================================
+ */
 (() => {
   const menu = document.getElementById('courseDetailMenu');
   const nav = document.getElementById('courseDetailNav');
