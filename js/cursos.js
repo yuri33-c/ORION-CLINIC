@@ -70,6 +70,8 @@
      * O composedPath() deixa a checagem mais robusta em navegadores
      * quando o alvo visual está dentro de elementos transformados.
      */
+    // Clique normal no card: somente a área do card fora de links e botões vira.
+    // Isso evita que o CTA do verso seja interpretado como um clique no card.
     card.addEventListener('click', (event) => {
       const path = typeof event.composedPath === 'function' ? event.composedPath() : [];
       const interactiveFromPath = path.some((node) => {

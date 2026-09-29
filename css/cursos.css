@@ -15,6 +15,150 @@
 @media(max-width:1050px){.education-nav{gap:16px}.programs-head{grid-template-columns:1fr}.program-grid{grid-template-columns:1fr}.program-card,.program-flip-inner{min-height:560px}.how-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefit-section{grid-template-columns:1fr}.benefit-image{max-width:650px}.faq-section{grid-template-columns:1fr}}
 @media(max-width:780px){.education-nav{position:absolute;left:0;right:0;top:76px;display:none;flex-direction:column;align-items:stretch;gap:0;padding:14px 20px 20px;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(7,9,13,.96)}.education-nav.open{display:flex}.education-nav a{padding:12px 0}.education-cta{display:none}.education-menu{display:block;margin-left:auto}.education-hero{grid-template-columns:1fr;padding:130px 7vw 75px;gap:55px}.education-hero-visual{min-height:auto}.hero-frame{height:560px}.hero-floating-note{left:14px;bottom:22px}.how-grid{grid-template-columns:1fr}.benefit-image,.benefit-image img{min-height:500px}.education-footer{flex-direction:column;align-items:flex-start}}
 @media(max-width:540px){.education-header{top:10px;width:calc(100% - 20px);height:62px;padding-left:14px}.education-brand img{width:116px}.education-hero h1{font-size:54px}.education-lead{font-size:11px}.education-proof-row{display:grid;grid-template-columns:1fr 1fr}.education-proof-row div:last-child{grid-column:1/-1}.education-hero-actions{display:grid;grid-template-columns:1fr}.edu-button{width:100%}.hero-frame{height:470px}.programs,.how-section,.benefit-section,.faq-section,.education-final-cta{padding-left:6vw;padding-right:6vw}.programs h2,.how-head h2,.benefit-copy h2,.faq-head h2,.education-final-cta h2{font-size:54px}.program-card,.program-flip-inner{min-height:530px}.program-card-body h3,.program-back h3{font-size:42px}.programs-head-copy p{font-size:11px}.benefit-image,.benefit-image img{min-height:410px}.faq-item{padding-right:44px}.education-footer{padding:24px 6vw}}
+
+
+/* ========================================================================
+   AJUSTE MOBILE — CARDS DE FORMAÇÃO
+   ------------------------------------------------------------------------
+   No celular o texto ocupa mais linhas. O card anterior tinha uma altura
+   muito curta para o conteúdo do verso, causando cortes e sobreposição.
+   Este bloco aumenta a área útil, reduz apenas o necessário a tipografia
+   e mantém frente, verso e CTA dentro do mesmo espaço visual.
+   ======================================================================== */
+@media (max-width: 540px) {
+  .program-grid {
+    gap: 24px;
+  }
+
+  .program-card,
+  .program-flip-inner {
+    min-height: 680px;
+    height: 680px;
+  }
+
+  .program-face {
+    border-radius: 24px;
+  }
+
+  .program-card-image-wrap {
+    height: 55%;
+    bottom: auto;
+  }
+
+  .program-image-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 6, 9, .04) 0%,
+      rgba(4, 6, 9, .18) 38%,
+      rgba(4, 6, 9, .92) 100%
+    );
+  }
+
+  .program-card-body {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+  }
+
+  .program-card-number {
+    top: 18px;
+    right: 18px;
+    font-size: 50px;
+  }
+
+  .program-type {
+    margin-bottom: 10px;
+    font-size: 7px;
+    letter-spacing: .18em;
+  }
+
+  .program-card-body h3,
+  .program-back h3 {
+    font-size: 38px;
+    line-height: .92;
+    margin-bottom: 13px;
+  }
+
+  .program-card-body > p,
+  .program-back > p {
+    font-size: 10px;
+    line-height: 1.72;
+  }
+
+  .program-tags {
+    margin-top: 15px;
+    gap: 6px;
+  }
+
+  .program-tags span {
+    padding: 7px 9px;
+    font-size: 6.5px;
+  }
+
+  .flip-hint {
+    margin-top: 13px;
+    font-size: 6.5px;
+    line-height: 1.5;
+  }
+
+  .program-back {
+    padding: 25px 22px 22px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .program-back h3 {
+    font-size: 38px;
+  }
+
+  .back-grid {
+    gap: 7px;
+    margin: 17px 0 16px;
+  }
+
+  .back-grid div {
+    padding: 10px 11px;
+  }
+
+  .back-grid strong {
+    font-size: 6px;
+  }
+
+  .back-grid span {
+    font-size: 8px;
+    line-height: 1.45;
+  }
+
+  .program-detail-context {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    font-size: 7.5px;
+    line-height: 1.55;
+  }
+
+  .program-detail-btn {
+    min-height: 50px;
+    flex: 0 0 auto;
+    padding: 0 14px;
+    font-size: 7px;
+    letter-spacing: .09em;
+  }
+}
+
+/* Em telas muito estreitas, damos alguns pixels extras para evitar cortes. */
+@media (max-width: 380px) {
+  .program-card,
+  .program-flip-inner {
+    min-height: 710px;
+    height: 710px;
+  }
+
+  .program-card-body h3,
+  .program-back h3 {
+    font-size: 35px;
+  }
+}
+
 @media(prefers-reduced-motion:reduce){.reveal-edu{transition:none}.program-flip-inner{transition:none}.program-card-image{transition:none}.edu-button,.how-card{transition:none}}
 
 
