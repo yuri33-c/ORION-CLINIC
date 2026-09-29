@@ -1,0 +1,285 @@
+:root{--edu-bg:#05070a;--edu-cream:#f4ecdf;--edu-ink:#16130f;--edu-muted:#746b60;--edu-gold:#d8b06b;--edu-blue:#3d7dff;--edu-line:rgba(255,255,255,.1)}
+.education-page{margin:0;background:var(--edu-bg);color:#f4efe7;font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}.education-page *{box-sizing:border-box}.education-page a{text-decoration:none;color:inherit}.education-page button{font:inherit}.education-page::selection{background:rgba(61,125,255,.28);color:#fff}
+.education-header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1240px,calc(100% - 32px));height:68px;padding:0 10px 0 20px;border:1px solid rgba(255,255,255,.1);border-radius:22px;display:flex;align-items:center;gap:18px;z-index:100;background:rgba(6,8,12,.7);backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.education-brand{display:block;flex:0 0 auto}.education-brand img{display:block;width:128px;filter:drop-shadow(0 0 16px rgba(216,176,107,.08))}.education-nav{display:flex;align-items:center;gap:25px;margin-left:auto}.education-nav a{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#b7bfc8;position:relative;padding:6px 0}.education-nav a:after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:var(--edu-gold);transform:scaleX(0);transform-origin:left;transition:.25s}.education-nav a:hover,.education-nav a.active{color:#fff}.education-nav a:hover:after,.education-nav a.active:after{transform:scaleX(1)}
+.education-cta{height:44px;padding:0 17px;border-radius:999px;border:1px solid rgba(37,211,102,.42);background:linear-gradient(135deg,rgba(37,211,102,.13),rgba(255,255,255,.03));display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.1em;font-size:8px;font-weight:800;color:#f5f1ea;white-space:nowrap}.education-cta svg{width:18px;height:18px;color:#25d366;flex:0 0 18px}.education-menu{display:none;width:44px;height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03)}.education-menu span{display:block;width:18px;height:1px;background:#fff;margin:5px auto}
+.education-hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr .92fr;align-items:center;gap:7vw;padding:150px 7vw 90px;background:radial-gradient(circle at 15% 20%,rgba(61,125,255,.16),transparent 25%),radial-gradient(circle at 70% 15%,rgba(216,176,107,.1),transparent 23%),#05070a;overflow:hidden}.education-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,black,transparent 82%);pointer-events:none}.hero-light{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}.hero-light-one{width:320px;height:320px;background:rgba(61,125,255,.11);left:-100px;bottom:-80px}.hero-light-two{width:300px;height:300px;background:rgba(216,176,107,.08);right:-90px;top:90px}.hero-orbit{position:absolute;border:1px solid rgba(216,176,107,.1);border-radius:50%;pointer-events:none}.hero-orbit-one{width:65vw;height:28vw;right:-20vw;top:17vh;transform:rotate(-14deg)}.hero-orbit-two{width:55vw;height:22vw;left:-18vw;bottom:8vh;transform:rotate(18deg)}
+.education-hero-copy{position:relative;z-index:2;max-width:760px}.education-kicker{display:flex;align-items:center;gap:11px;margin:0 0 24px;color:var(--edu-gold);font-size:8px;font-weight:800;letter-spacing:.3em;text-transform:uppercase}.education-kicker span{width:28px;height:1px;background:currentColor;display:inline-block}.education-kicker.dark{color:#a67a3c}.education-hero h1{margin:0 0 26px;font:500 clamp(64px,7.3vw,118px)/.8 "Cormorant Garamond",serif;letter-spacing:-.05em;max-width:760px}.education-hero h1 em,.programs h2 em,.how-head h2 em,.benefit-copy h2 em,.faq-head h2 em,.education-final-cta h2 em{font-style:italic;color:var(--edu-gold)}.education-lead{max-width:690px;color:#a9b1bc;font-size:12px;line-height:1.9;margin:0 0 28px}.education-proof-row{display:flex;gap:10px;margin:0 0 30px}.education-proof-row div{min-width:130px;padding:14px 15px;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(255,255,255,.025)}.education-proof-row strong{display:block;font:600 23px/.9 "Cormorant Garamond",serif;color:#f1ecdf}.education-proof-row span{display:block;margin-top:6px;color:#737d88;font-size:7px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.education-hero-actions{display:flex;gap:10px;flex-wrap:wrap}.edu-button{min-height:50px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:8px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;transition:.25s ease}.edu-button svg{width:18px;height:18px;flex:0 0 18px}.edu-button.primary{background:linear-gradient(135deg,#e7c98f,#c9964d);color:#17120c;box-shadow:0 14px 34px rgba(216,176,107,.18)}.edu-button.primary:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(216,176,107,.26)}.edu-button.ghost{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.13);color:#eef0f4}.edu-button.ghost:hover{transform:translateY(-2px);border-color:rgba(61,125,255,.5);background:rgba(61,125,255,.07)}.whatsapp-btn svg{color:#25d366}.edu-button.primary.whatsapp-btn svg{color:#152010}
+.education-hero-visual{position:relative;z-index:2;min-height:650px;display:flex;align-items:center;justify-content:center}.hero-frame{position:relative;width:min(100%,520px);height:650px;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:30px;background:#0b1017;box-shadow:0 30px 100px rgba(0,0,0,.28)}.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block;filter:saturate(.88) contrast(1.08);transform:scale(1.02);transition:transform 1s ease}.hero-frame:hover img{transform:scale(1.06)}.hero-frame-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(4,6,9,.82) 100%)}.hero-frame-caption{position:absolute;left:24px;right:24px;bottom:24px;display:flex;align-items:end;justify-content:space-between;gap:20px}.hero-frame-caption span{font-size:7px;font-weight:800;letter-spacing:.22em;color:#d8b06b}.hero-frame-caption strong{font:500 24px/1 "Cormorant Garamond",serif;color:#f4eee4;text-align:right}.hero-floating-note{position:absolute;left:-42px;bottom:48px;width:230px;padding:18px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(8,11,16,.82);backdrop-filter:blur(16px);box-shadow:0 18px 50px rgba(0,0,0,.25)}.hero-floating-note small{display:block;color:#7d8995;font-size:7px;font-weight:800;letter-spacing:.17em}.hero-floating-note strong{display:block;margin:7px 0;font:500 26px/.9 "Cormorant Garamond",serif;color:#fff}.hero-floating-note span{font-size:7px;font-weight:800;letter-spacing:.2em;color:var(--edu-gold)}
+.programs{padding:130px 7vw;background:var(--edu-cream);color:var(--edu-ink)}.programs-head{display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:end;margin-bottom:56px}.programs h2{margin:0;font:500 clamp(56px,6vw,92px)/.85 "Cormorant Garamond",serif;letter-spacing:-.045em}.programs-head-copy p{margin:0 0 15px;max-width:680px;color:#6f675e;font-size:12px;line-height:1.9}.programs-head-copy span{font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#96703c}.program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;perspective:1800px}.program-card{min-height:600px;position:relative;cursor:pointer;outline:none}.program-card:focus-visible{outline:2px solid rgba(216,176,107,.65);outline-offset:8px;border-radius:28px}.program-flip-inner{position:relative;min-height:600px;height:100%;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.7,.2,1)}.program-card.is-flipped .program-flip-inner{transform:rotateY(180deg)}.program-face{position:absolute;inset:0;border-radius:28px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 26px 70px rgba(24,19,12,.13)}.program-front{pointer-events:auto}.program-back{pointer-events:none}.program-card.is-flipped .program-front{pointer-events:none}.program-card.is-flipped .program-back{pointer-events:auto}.program-front{background:#0c1017;color:#fff}.program-card-image-wrap{position:absolute;inset:0}.program-card-image{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.84) contrast(1.08);transform:scale(1.02);transition:transform .8s ease}.program-card:hover .program-card-image{transform:scale(1.06)}.program-image-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,9,.08) 15%,rgba(4,6,9,.4) 38%,rgba(4,6,9,.95) 100%)}.program-card-number{position:absolute;top:25px;right:25px;font:500 58px/1 "Cormorant Garamond",serif;color:rgba(255,255,255,.18);z-index:3}.program-card-body{position:absolute;left:25px;right:25px;bottom:25px;z-index:4}.program-type{margin:0 0 12px;font-size:8px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#d8b06b}.program-card-body h3,.program-back h3{margin:0 0 15px;font:500 45px/.88 "Cormorant Garamond",serif;letter-spacing:-.04em}.program-card-body h3 em,.program-back h3 em{font-style:italic;color:#e2c48b}.program-card-body>p,.program-back>p{margin:0;color:#c4cad1;font-size:10.5px;line-height:1.78;max-width:460px}.program-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.program-tags span{padding:8px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#e7e1d6}.flip-hint{margin-top:17px;color:#d8b06b;font-size:7px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.program-back{transform:rotateY(180deg);padding:31px;background:radial-gradient(circle at 85% 12%,rgba(216,176,107,.16),transparent 32%),linear-gradient(145deg,#111721,#090c11 65%,#11100d);border:1px solid rgba(216,176,107,.25);color:#f5f0e7;display:flex;flex-direction:column}.program-back .program-card-number{color:rgba(216,176,107,.16)}.program-back h3{font-size:50px}.program-back>p{color:#b3bbc5;max-width:460px}.back-grid{display:grid;grid-template-columns:1fr;gap:8px;margin:22px 0}.back-grid div{padding:12px 13px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(255,255,255,.025)}.back-grid strong{display:block;color:#87929f;font-size:6px;font-weight:800;letter-spacing:.17em}.back-grid span{display:block;margin-top:4px;color:#f0ece5;font-size:8.5px;line-height:1.5}.program-detail-context{margin-top:auto;margin-bottom:12px;color:#89929d;font-size:8px;line-height:1.6;max-width:420px}.program-detail-btn{appearance:none;text-decoration:none;pointer-events:auto;touch-action:manipulation;border:0;font-family:inherit;cursor:pointer;position:relative;z-index:20;width:100%;margin-top:0;min-height:48px;padding:0 18px;border-radius:999px;background:linear-gradient(135deg,#e5c88d,#c5944d);color:#16120e;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;text-align:center;transition:.25s ease}.program-detail-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(216,176,107,.2)}
+.how-section{padding:130px 7vw;background:#06090d;color:#f1ede6}.how-head{max-width:900px;margin-bottom:45px}.how-head h2,.benefit-copy h2,.faq-head h2{margin:0;font:500 clamp(56px,5.7vw,84px)/.86 "Cormorant Garamond",serif;letter-spacing:-.045em}.how-head>p:last-child,.benefit-copy>p,.faq-head>p{max-width:720px;margin:22px 0 0;color:#a4adb8;font-size:12px;line-height:1.9}.how-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.how-card{padding:27px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));transition:.3s ease}.how-card:hover{transform:translateY(-6px);border-color:rgba(216,176,107,.25);box-shadow:0 22px 55px rgba(0,0,0,.18)}.how-card>span{display:block;color:var(--edu-gold);font:600 10px/1 "Cormorant Garamond",serif}.how-card h3{margin:55px 0 12px;font:500 30px/.9 "Cormorant Garamond",serif}.how-card p{margin:0;color:#949da8;font-size:10px;line-height:1.8}
+.benefit-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw;align-items:center;padding:120px 7vw;background:#0a0d12;color:#fff}.benefit-image{position:relative;min-height:590px;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}.benefit-image img{width:100%;height:100%;min-height:590px;object-fit:cover;display:block;filter:saturate(.85) contrast(1.08)}.benefit-image>div{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.62))}.benefit-copy h2{max-width:760px}.benefit-copy>p{max-width:700px}.benefit-list{display:grid;gap:9px;margin:26px 0 28px}.benefit-list div{padding:15px 16px;border:1px solid rgba(255,255,255,.08);border-radius:15px;background:rgba(255,255,255,.025)}.benefit-list strong{display:block;font-size:10px}.benefit-list span{display:block;margin-top:4px;color:#919aa5;font-size:9px;line-height:1.6}
+.faq-section{padding:125px 7vw;background:var(--edu-cream);color:var(--edu-ink);display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:start}.faq-head>p{color:#6e665c}.faq-list{display:grid;gap:10px}.faq-item{width:100%;text-align:left;border:1px solid rgba(27,22,17,.12);border-radius:18px;background:rgba(255,255,255,.45);padding:19px 50px 19px 18px;color:#1b1713;cursor:pointer;position:relative}.faq-item span{font-size:10px;font-weight:800;letter-spacing:.02em}.faq-item:before,.faq-item:after{content:"";position:absolute;right:20px;top:24px;background:#9d753b;transition:.25s}.faq-item:before{width:12px;height:1px}.faq-item:after{width:1px;height:12px;right:25px;top:18px}.faq-item.open:after{opacity:0}.faq-item p{max-height:0;overflow:hidden;opacity:0;margin:0;color:#6e665d;font-size:10px;line-height:1.8;transition:.3s}.faq-item.open p{max-height:180px;opacity:1;margin-top:10px}
+.education-final-cta{padding:130px 7vw;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(61,125,255,.13),transparent 24%),radial-gradient(circle at 50% 60%,rgba(216,176,107,.08),transparent 32%),#05070a}.education-final-cta h2{margin:0;font:500 clamp(58px,6vw,92px)/.86 "Cormorant Garamond",serif;letter-spacing:-.045em}.education-final-cta>p:not(.education-kicker){max-width:690px;margin:20px auto 28px;color:#9ea7b1;font-size:12px;line-height:1.85}.education-final-cta .education-kicker{justify-content:center}.education-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 7vw;background:#030407;border-top:1px solid rgba(255,255,255,.08);color:#77808a;font-size:7px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.education-footer img{width:125px;display:block}.education-footer a:last-child{color:#d8dce0}
+.reveal-edu{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal-edu.visible{opacity:1;transform:none}
+@media(max-width:1050px){.education-nav{gap:16px}.programs-head{grid-template-columns:1fr}.program-grid{grid-template-columns:1fr}.program-card,.program-flip-inner{min-height:560px}.how-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefit-section{grid-template-columns:1fr}.benefit-image{max-width:650px}.faq-section{grid-template-columns:1fr}}
+@media(max-width:780px){.education-nav{position:absolute;left:0;right:0;top:76px;display:none;flex-direction:column;align-items:stretch;gap:0;padding:14px 20px 20px;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(7,9,13,.96)}.education-nav.open{display:flex}.education-nav a{padding:12px 0}.education-cta{display:none}.education-menu{display:block;margin-left:auto}.education-hero{grid-template-columns:1fr;padding:130px 7vw 75px;gap:55px}.education-hero-visual{min-height:auto}.hero-frame{height:560px}.hero-floating-note{left:14px;bottom:22px}.how-grid{grid-template-columns:1fr}.benefit-image,.benefit-image img{min-height:500px}.education-footer{flex-direction:column;align-items:flex-start}}
+@media(max-width:540px){.education-header{top:10px;width:calc(100% - 20px);height:62px;padding-left:14px}.education-brand img{width:116px}.education-hero h1{font-size:54px}.education-lead{font-size:11px}.education-proof-row{display:grid;grid-template-columns:1fr 1fr}.education-proof-row div:last-child{grid-column:1/-1}.education-hero-actions{display:grid;grid-template-columns:1fr}.edu-button{width:100%}.hero-frame{height:470px}.programs,.how-section,.benefit-section,.faq-section,.education-final-cta{padding-left:6vw;padding-right:6vw}.programs h2,.how-head h2,.benefit-copy h2,.faq-head h2,.education-final-cta h2{font-size:54px}.program-card,.program-flip-inner{min-height:530px}.program-card-body h3,.program-back h3{font-size:42px}.programs-head-copy p{font-size:11px}.benefit-image,.benefit-image img{min-height:410px}.faq-item{padding-right:44px}.education-footer{padding:24px 6vw}}
+
+
+/* ========================================================================
+   AJUSTE MOBILE — CARDS DE FORMAÇÃO
+   ------------------------------------------------------------------------
+   No celular o texto ocupa mais linhas. O card anterior tinha uma altura
+   muito curta para o conteúdo do verso, causando cortes e sobreposição.
+   Este bloco aumenta a área útil, reduz apenas o necessário a tipografia
+   e mantém frente, verso e CTA dentro do mesmo espaço visual.
+   ======================================================================== */
+@media (max-width: 540px) {
+  .program-grid {
+    gap: 24px;
+  }
+
+  .program-card,
+  .program-flip-inner {
+    min-height: 680px;
+    height: 680px;
+  }
+
+  .program-face {
+    border-radius: 24px;
+  }
+
+  .program-card-image-wrap {
+    height: 55%;
+    bottom: auto;
+  }
+
+  .program-image-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 6, 9, .04) 0%,
+      rgba(4, 6, 9, .18) 38%,
+      rgba(4, 6, 9, .92) 100%
+    );
+  }
+
+  .program-card-body {
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+  }
+
+  .program-card-number {
+    top: 18px;
+    right: 18px;
+    font-size: 50px;
+  }
+
+  .program-type {
+    margin-bottom: 10px;
+    font-size: 7px;
+    letter-spacing: .18em;
+  }
+
+  .program-card-body h3,
+  .program-back h3 {
+    font-size: 38px;
+    line-height: .92;
+    margin-bottom: 13px;
+  }
+
+  .program-card-body > p,
+  .program-back > p {
+    font-size: 10px;
+    line-height: 1.72;
+  }
+
+  .program-tags {
+    margin-top: 15px;
+    gap: 6px;
+  }
+
+  .program-tags span {
+    padding: 7px 9px;
+    font-size: 6.5px;
+  }
+
+  .flip-hint {
+    margin-top: 13px;
+    font-size: 6.5px;
+    line-height: 1.5;
+  }
+
+  .program-back {
+    padding: 25px 22px 22px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .program-back h3 {
+    font-size: 38px;
+  }
+
+  .back-grid {
+    gap: 7px;
+    margin: 17px 0 16px;
+  }
+
+  .back-grid div {
+    padding: 10px 11px;
+  }
+
+  .back-grid strong {
+    font-size: 6px;
+  }
+
+  .back-grid span {
+    font-size: 8px;
+    line-height: 1.45;
+  }
+
+  .program-detail-context {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    font-size: 7.5px;
+    line-height: 1.55;
+  }
+
+  .program-detail-btn {
+    min-height: 50px;
+    flex: 0 0 auto;
+    padding: 0 14px;
+    font-size: 7px;
+    letter-spacing: .09em;
+  }
+}
+
+/* Em telas muito estreitas, damos alguns pixels extras para evitar cortes. */
+@media (max-width: 380px) {
+  .program-card,
+  .program-flip-inner {
+    min-height: 710px;
+    height: 710px;
+  }
+
+  .program-card-body h3,
+  .program-back h3 {
+    font-size: 35px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){.reveal-edu{transition:none}.program-flip-inner{transition:none}.program-card-image{transition:none}.edu-button,.how-card{transition:none}}
+
+
+/* ==========================================================================
+   CORREÇÃO CRÍTICA DO CLIQUE NOS BOTÕES DOS CARDS 3D
+   --------------------------------------------------------------------------
+   A face da frente aceita interação somente antes do flip.
+   A face do verso aceita interação somente depois do flip.
+   Isso evita que a face escondida capture o clique do botão.
+   ========================================================================== */
+.program-face.program-front { pointer-events: auto; }
+.program-face.program-back { pointer-events: none; }
+.program-card.is-flipped .program-face.program-front { pointer-events: none; }
+.program-card.is-flipped .program-face.program-back { pointer-events: auto; }
+
+/* O botão de detalhes fica acima da camada 3D e responde a mouse/toque. */
+.program-detail-btn {
+  position: relative;
+  z-index: 999;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* ========================================================================
+   CORREÇÃO DEFINITIVA PARA MOBILE — SEM FLIP 3D NO CELULAR
+   ------------------------------------------------------------------------
+   O Safari/iOS pode apresentar artefatos com preserve-3d + rotateY em
+   elementos que possuem conteúdo, overflow e links. Isso era responsável
+   pelas palavras aparecendo de cabeça para baixo no verso dos cards.
+
+   No desktop, o efeito 3D continua normal.
+   No celular, o card mantém a ideia de "virar", mas faz a transição por
+   opacidade e deslocamento. Assim nenhuma face é renderizada invertida.
+   ======================================================================== */
+@media (max-width: 780px) {
+  /* O contêiner deixa de girar no celular. */
+  .program-flip-inner {
+    transform: none !important;
+    transform-style: flat !important;
+    transition: none;
+  }
+
+  /* As duas faces ficam empilhadas no mesmo espaço. */
+  .program-face {
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    transition: opacity .38s ease, visibility .38s ease, transform .38s ease;
+  }
+
+  /* Estado normal: apenas a frente aparece. */
+  .program-front {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) !important;
+    pointer-events: auto;
+  }
+
+  .program-back {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(18px) !important;
+    pointer-events: none;
+  }
+
+  /* Estado ativo: esconde a frente e mostra o verso na orientação correta. */
+  .program-card.is-flipped .program-front {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-18px) !important;
+    pointer-events: none;
+  }
+
+  .program-card.is-flipped .program-back {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) !important;
+    pointer-events: auto;
+  }
+
+  /* O botão continua sempre acessível no verso. */
+  .program-detail-btn {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    pointer-events: auto !important;
+  }
+}
+
+/* Ajuste específico para celulares pequenos: mais respiro e leitura. */
+@media (max-width: 540px) {
+  .program-card,
+  .program-flip-inner {
+    min-height: 650px;
+    height: 650px;
+  }
+
+  .program-back {
+    padding: 26px 22px 22px;
+    overflow: hidden;
+  }
+
+  .program-back h3 {
+    font-size: 40px;
+    line-height: .94;
+    margin-bottom: 14px;
+  }
+
+  .program-back > p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .back-grid {
+    margin: 18px 0 16px;
+    gap: 8px;
+  }
+
+  .program-detail-context {
+    margin-top: auto;
+    margin-bottom: 11px;
+  }
+}
